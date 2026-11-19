@@ -1,0 +1,98 @@
+{
+  "info": {
+    "name": "Student Management API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Add Student",
+      "request": {
+        "method": "POST",
+        "url": "http://localhost:8080/api/students",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"studentId\": 1,\n  \"studentName\": \"Riya Sharma\",\n  \"email\": \"riya@example.com\",\n  \"courseName\": \"CSE\",\n  \"programmingScore\": 88,\n  \"mathematicsScore\": 92,\n  \"technicalSkills\": [\n    \"Java\",\n    \"SQL\",\n    \"Spring Boot\"\n  ]\n}"
+        }
+      }
+    },
+    {
+      "name": "Get All",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8080/api/students"
+      }
+    },
+    {
+      "name": "Get By ID",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8080/api/students/1"
+      }
+    },
+    {
+      "name": "Update Scores and Skills",
+      "request": {
+        "method": "PUT",
+        "url": "http://localhost:8080/api/students/1",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"programmingScore\": 95,\n  \"mathematicsScore\": 90,\n  \"technicalSkills\": [\n    \"Java\",\n    \"SQL\",\n    \"Spring Boot\",\n    \"Docker\"\n  ]\n}"
+        }
+      }
+    },
+    {
+      "name": "Delete",
+      "request": {
+        "method": "DELETE",
+        "url": "http://localhost:8080/api/students/1"
+      }
+    },
+    {
+      "name": "Merit List",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8080/api/students/merit-list"
+      }
+    },
+    {
+      "name": "Search Email",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8080/api/students/search?email=riya@example.com"
+      }
+    },
+    {
+      "name": "Search Course",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8080/api/students/search?course=CSE"
+      }
+    },
+    {
+      "name": "Same Skills",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8080/api/students/same-skills"
+      }
+    },
+    {
+      "name": "Programming Needs Improvement",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8080/api/students/programming-needs-improvement"
+      }
+    }
+  ]
+}
